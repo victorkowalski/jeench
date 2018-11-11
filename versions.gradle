@@ -1,0 +1,34 @@
+
+ext.deps = [:]
+def versions = [:]
+versions.support = "28.0.0"
+versions.constraint_layout = "1.0.2"
+versions.dagger = "2.15"
+versions.junit = "4.12"
+
+def build_versions = [:]
+build_versions.min_sdk = 21
+build_versions.target_sdk = 28
+build_versions.build_tools = "28.0.3"
+
+ext.build_versions = build_versions
+
+def support = [:]
+//support.annotations = "com.android.support:support-annotations:$versions.support"
+support.app_compat = "com.android.support:appcompat-v7:$versions.support"
+support.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+//support.recyclerview = "com.android.support:recyclerview-v7:$versions.support"
+//support.cardview = "com.android.support:cardview-v7:$versions.support"
+//support.design = "com.android.support:design:$versions.support"
+//support.v4 = "com.android.support:support-v4:$versions.support"
+//support.core_utils = "com.android.support:support-core-utils:$versions.support"
+deps.support = support
+
+def dagger = [:]
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
+dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
+
+deps.dagger = dagger
