@@ -1,7 +1,5 @@
 package com.victor.ko.jeench.di;
 
-import com.jshvarts.daggerandroidsampleapp.App;
-
 import javax.inject.Singleton;
 
 import dagger.BindsInstance;
