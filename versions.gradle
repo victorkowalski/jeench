@@ -6,7 +6,7 @@ versions.constraint_layout = "1.0.2"
 versions.dagger = "2.15"
 versions.junit = "4.12"
 versions.retrofit = "2.3.0"
-versions.simplexml = "2.0.0-beta3"
+versions.simplexml = "2.3.0"
 
 def deps = [:]
 
@@ -43,7 +43,7 @@ deps.dagger = dagger
 def retrofit = [:]
 retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
 retrofit.simplexml = "com.squareup.retrofit2:converter-simplexml:$versions.simplexml"
-retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+//retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
 deps.retrofit = retrofit
 
 deps.junit = "junit:junit:$versions.junit"

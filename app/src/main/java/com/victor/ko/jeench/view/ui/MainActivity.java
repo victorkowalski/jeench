@@ -18,7 +18,6 @@ import dagger.android.support.HasSupportFragmentInjector;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Retrofit;
-import retrofit2.SimpleXmlConverterFactory;
 
 import android.widget.Toast;
 
@@ -30,8 +29,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.SimpleXmlConverterFactory;
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
+//import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity /*implements HasSupportFragmentInjector */{
 
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity /*implements HasSupportFragm
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API_BASE_URL)
                 .client(new OkHttpClient())
-                .addConverterFactory(/*SimpleXmlConverterFactory.create()*/GsonConverterFactory.create())
+                .addConverterFactory(SimpleXmlConverterFactory.create()/*GsonConverterFactory.create()*/)
                 .build();
 
         ShopAPI api = retrofit.create(ShopAPI.class);
