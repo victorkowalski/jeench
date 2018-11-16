@@ -32,3 +32,10 @@ dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
 dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
 
 deps.dagger = dagger
+
+// Dagger
+//annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
+//annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+//implementation "com.google.dagger:dagger:$project.dagger_version"
+//implementation "com.google.dagger:dagger-android:$project.dagger_version"
+//implementation "com.google.dagger:dagger-android-support:$project.dagger_version"
