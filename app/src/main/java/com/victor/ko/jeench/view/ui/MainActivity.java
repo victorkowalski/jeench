@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
-public class MainActivity extends AppCompatActivity implements HasSupportFragmentInjector {
+public class MainActivity extends AppCompatActivity /*implements HasSupportFragmentInjector */{
 
     @Inject
     DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
@@ -24,14 +24,14 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
 
         // Add project list fragment if this is first creation
         if (savedInstanceState == null) {
-            ProjectListFragment fragment = new ProjectListFragment();
+            ShopListFragment fragment = new ShopListFragment();
 
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container, fragment, ProjectListFragment.TAG).commit();
+                    .add(R.id.fragment_container, fragment, ShopListFragment.TAG).commit();
         }
     }
 
-    /** Shows the project detail fragment */
+    /** Shows the project detail fragment *//*
     public void show(Project project) {
         ProjectFragment projectFragment = ProjectFragment.forProject(project.name);
 
@@ -40,10 +40,10 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
                 .addToBackStack("project")
                 .replace(R.id.fragment_container,
                         projectFragment, null).commit();
-    }
-
+    }*/
+/*
     @Override
     public DispatchingAndroidInjector<Fragment> supportFragmentInjector() {
         return dispatchingAndroidInjector;
-    }
+    }*/
 }
