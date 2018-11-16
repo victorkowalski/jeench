@@ -43,6 +43,7 @@ deps.dagger = dagger
 def retrofit = [:]
 retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
 retrofit.simplexml = "com.squareup.retrofit2:converter-simplexml:$versions.simplexml"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
 deps.retrofit = retrofit
 
 deps.junit = "junit:junit:$versions.junit"
