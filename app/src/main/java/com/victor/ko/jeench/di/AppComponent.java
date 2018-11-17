@@ -1,9 +1,7 @@
 package com.victor.ko.jeench.di;
 
-import android.app.Application;
-
 import com.victor.ko.jeench.JeenchApplication;
-
+import android.app.Application;
 import javax.inject.Singleton;
 
 import dagger.BindsInstance;
@@ -13,8 +11,8 @@ import dagger.android.AndroidInjectionModule;
 @Singleton
 @Component(modules = {
         AndroidInjectionModule.class,
-        //AppModule.class,
-        //MainActivityModule.class
+        AppModule.class,
+        MainActivityModule.class
 })
 public interface AppComponent {
     @Component.Builder

@@ -12,6 +12,7 @@ import com.victor.ko.jeench.view.adapter.ShopAdapter;
 
 import com.victor.ko.jeench.databinding.FragmentShopListBinding;
 import com.victor.ko.jeench.view.callback.ShopClickCallback;
+import com.victor.ko.jeench.viewmodel.ShopListViewModel;
 /*
 import com.example.test.mvvmsampleapp.R;
 import com.example.test.mvvmsampleapp.databinding.FragmentProjectListBinding;
@@ -32,6 +33,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 //import androidx.lifecycle.ViewModelProviders;
 
 public class ShopListFragment extends Fragment implements Injectable {
@@ -48,36 +50,35 @@ public class ShopListFragment extends Fragment implements Injectable {
                              @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shop_list, container, false);
 
-        shopAdapter = new ShopAdapter(projectClickCallback);
+        shopAdapter = new ShopAdapter(shopClickCallback);
         binding.shopList.setAdapter(shopAdapter);
         binding.setIsLoading(true);
 
         return (View) binding.getRoot();
     }
 
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-/*
-        final ProjectListViewModel viewModel = ViewModelProviders.of(this,
-                viewModelFactory).get(ProjectListViewModel.class);
 
-        observeViewModel(viewModel);*/
+        final ShopListViewModel viewModel = ViewModelProviders.of(this,
+                viewModelFactory).get(ShopListViewModel.class);
+
+        observeViewModel(viewModel);
     }
-/*
-    private void observeViewModel(ProjectListViewModel viewModel) {
+
+    private void observeViewModel(ShopListViewModel viewModel) {
         // Update the list when the data changes
-        viewModel.getProjectListObservable().observe(this, new Observer<List<Project>>() {
+        viewModel.getShopListObservable().observe(this, new Observer<List<Shop>>() {
             @Override
-            public void onChanged(@Nullable List<Project> projects) {
-                if (projects != null) {
+            public void onChanged(@Nullable List<Shop> shops) {
+                if (shops != null) {
                     binding.setIsLoading(false);
-                    projectAdapter.setProjectList(projects);
+                    shopAdapter.setShopList(shops);
                 }
             }
         });
-    }*/
+    }
 
     private final ShopClickCallback shopClickCallback = new ShopClickCallback() {
         @Override

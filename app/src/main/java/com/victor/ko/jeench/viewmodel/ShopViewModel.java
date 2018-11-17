@@ -42,8 +42,11 @@ public class ShopViewModel extends AndroidViewModel {
 
             Log.i(TAG,"ShopViewModel shopID is " + shopID.getValue());
 
-            //return shopRepository.getShopDetails("Google", shopID.getValue());
-            return null;//shopRepository.getShopList().getValue().get(5);
+            //test
+            //ShopViewModel shopViewModel = new ShopViewModel();
+
+            return shopRepository.getShopDetails(shopID.getValue());
+            //return null;//shopRepository.getShopList().getValue().get(5);
         });
     }
 

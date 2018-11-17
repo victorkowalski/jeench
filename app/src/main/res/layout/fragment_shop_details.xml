@@ -19,7 +19,7 @@
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/loading_project"
             android:textAlignment="center"
-            app:visibleGone="@{isLoading}"/>
+            /> <!--app:visibleGone="@{isLoading}" -->
 
         <LinearLayout
             android:layout_marginStart="@dimen/item_horizontal_margin"
@@ -30,22 +30,22 @@
             android:padding="5dp"
             android:paddingTop="@dimen/activity_vertical_margin"
             android:orientation="vertical"
-            app:visibleGone="@{!isLoading}">
+            > <!--app:visibleGone="@{!isLoading}" -->
 
-            <!--ImageView
+            <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="@dimen/logo_width"
                 android:layout_height="@dimen/logo_height"
-                android:src="@drawable/github" /-->
+                 />  <!--android:src="@drawable/github" -->
 
-            <!--TextView
+            <TextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/project_name"
                 android:textStyle="bold"
                 android:textSize="@dimen/project_header1"
-                android:text="@{shopViewModel.shop.name}"
+                android:text="shopViewModel.shop.name"
                 android:textAlignment="center"
                 android:paddingBottom="5dp"/>
 
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/project_description"
                 android:textSize="@dimen/project_header2"
-                android:text="@{shopViewModel.shop.description}"/>
+                android:text="shopViewModel.shop.description"/>
 
 
             <TextView
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/project_language"
                 android:textSize="@dimen/project_text"
-                android:text="@{String.format(@string/languages, shopViewModel.shop.language)}"/>
+                android:text="shopViewModel.shop.language"/>
 
             <TextView
                 android:id="@+id/project_watchers"
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/project_watchers"
                 android:textSize="@dimen/project_text"
-                android:text="@{String.format(@string/watchers, shopViewModel.shop.watchers)}"/>
+                android:text="shopViewModel.shop.watchers"/>
 
             <TextView
                 android:id="@+id/project_open_issues"
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/open_issues"
                 android:textSize="@dimen/project_text"
-                android:text="@{String.format(@string/openIssues, shopViewModel.shop.open_issues)}"/>
+                android:text="shopViewModel.shop.open_issues"/>
 
 
             <TextView
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="Created At"
                 android:textSize="@dimen/project_text"
-                android:text="@{String.format(@string/created_at, shopViewModel.shop.created_at)}"/>
+                android:text="shopViewModel.shop.created_at"/>
 
             <TextView
                 android:id="@+id/project_updated_at"
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="Updated At"
                 android:textSize="@dimen/project_text"
-                android:text="@{String.format(@string/updated_at, shopViewModel.shop.updated_at)}"/>
+                android:text="shopViewModel.shop.updated_at"/>
 
             <TextView
                 android:id="@+id/clone_url"
@@ -105,9 +105,10 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/open_issues"
                 android:textSize="@dimen/project_text"
-                android:text="@{String.format(@string/clone_url, shopViewModel.shop.clone_url)}"/-->
+                android:text="shopViewModel.shop.clone_url"/>
 
         </LinearLayout>
 
     </FrameLayout>
+
 </layout>

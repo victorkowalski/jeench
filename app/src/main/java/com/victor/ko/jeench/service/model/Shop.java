@@ -1,32 +1,28 @@
 package com.victor.ko.jeench.service.model;
 
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.Root;
-
-//@Root(name = "item", strict = false)
 public class Shop {
-    /*@Element(name = "point_id")*/ private String point_id;
-    /*@Element(name = "shop_id")*/ private String shop_id;
-    /*@Element(name = "point_address")*/ private String point_address;
-    /*@Element(name = "point_coords")*/ private String point_coords;
-    /*@Element(name = "point_rank")*/ private String point_rank;
-    /*@Element(name = "point_distance")*/ private String point_distance;
-    /*@Element(name = "point_time_id")*/ private String point_time_id;
-    /*@Element(name = "shop_name")*/ private String shop_name;
-    /*@Element(name = "shop_logo")*/ private String shop_logo;
-    /*@Element(name = "shop_rank")*/ private String shop_rank;
-    /*@Element(name = "currency_id")*/ private String currency_id;
-    /*@Element(name = "item_is_liked")*/ private String item_is_liked;
-    /*@Element(name = "item_id")*/ private String item_id;
-    /*@Element(name = "item_name")*/ private String item_name;
-    /*@Element(name = "item_image")*/ private String item_image;
-    /*@Element(name = "item_price")*/ private String item_price;
-    /*@Element(name = "item_bonus_amount")*/ private String item_bonus_amount;
-    /*@Element(name = "item_bonus_price")*/ private String item_bonus_price;
-    /*@Element(name = "item_likes")*/ private String item_likes;
-    /*@Element(name = "item_shares")*/ private String item_shares;
-    /*@Element(name = "item_comments")*/ private String item_comments;
-    /*@Element(name = "group_type")*/ private String group_type;
+    private String point_id;
+    private String shop_id;
+    private String point_address;
+    private String point_coords;
+    private String point_rank;
+    private String point_distance;
+    private String point_time_id;
+    private String shop_name;
+    private String shop_logo;
+    private String shop_rank;
+    private String currency_id;
+    private String item_is_liked;
+    private String item_id;
+    private String item_name;
+    private String item_image;
+    private String item_price;
+    private String item_bonus_amount;
+    private String item_bonus_price;
+    private String item_likes;
+    private String item_shares;
+    private String item_comments;
+    private String group_type;
 
     public String getPoint_id() {
         return point_id;

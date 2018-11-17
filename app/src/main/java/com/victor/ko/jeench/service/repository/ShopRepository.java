@@ -112,11 +112,12 @@ public class ShopRepository {
 
         return retrofit;
     }
-/*
-    public LiveData<Shop> getShopDetails(String userID, String projectName) {
-        final MutableLiveData<Project> data = new MutableLiveData<>();
 
-        ShopService.getProjectDetails(userID, projectName).enqueue(new Callback<Project>() {
+    public LiveData<Shop> getShopDetails(String shopName) {
+        final MutableLiveData<Shop> data = new MutableLiveData<>();
+
+        /*
+        ShopService.getShopDetails(shopName).enqueue(new Callback<Project>() {
             @Override
             public void onResponse(Call<Project> call, Response<Project> response) {
                 simulateDelay();
@@ -128,11 +129,11 @@ public class ShopRepository {
                 // TODO better error handling in part #2 ...
                 data.setValue(null);
             }
-        });
+        });*/
 
         return data;
     }
-*/
+
     private void simulateDelay() {
         try {
             Thread.sleep(10);

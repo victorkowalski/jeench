@@ -3,8 +3,12 @@
 buildscript {
     apply from: 'versions.gradle'
     repositories {
-        google()
+        maven { url 'https://maven.google.com' }
         jcenter()
+
+        // You need to add the following repository to download the
+        // new plugin.
+        google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
@@ -17,8 +21,8 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
         jcenter()
+        maven { url 'https://maven.google.com' }
     }
 }
 

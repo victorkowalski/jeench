@@ -5,11 +5,10 @@ import android.app.Application;
 import android.os.Bundle;
 
 import com.victor.ko.jeench.JeenchApplication;
-/*
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-*/
 import dagger.android.AndroidInjection;
 import dagger.android.support.AndroidSupportInjection;
 import dagger.android.support.HasSupportFragmentInjector;
@@ -67,7 +66,6 @@ public class AppInjector {
         if (activity instanceof HasSupportFragmentInjector) {
             AndroidInjection.inject(activity);
         }
-        /*
         if (activity instanceof FragmentActivity) {
             ((FragmentActivity) activity).getSupportFragmentManager()
                     .registerFragmentLifecycleCallbacks(
@@ -80,6 +78,6 @@ public class AppInjector {
                                     }
                                 }
                             }, true);
-        }*/
+        }
     }
 }

@@ -49,17 +49,17 @@ public class ShopFragment extends Fragment implements Injectable {
         viewModel.setShopID(getArguments().getString(KEY_SHOP_ID));
 
         binding.setShopViewModel(viewModel);
-        binding.setIsLoading(true);
+        //binding.setIsLoading(true);
 
         observeViewModel(viewModel);
     }
 
     private void observeViewModel(final ShopViewModel viewModel) {
         // Observe project data
-        viewModel.getObservableProject().observe(this, new Observer<Shop>() {
+        viewModel.getObservableShop().observe(this, new Observer<Shop>() {
             @Override
-            public void onChanged(@Nullable Shop project) {
-                if (project != null) {
+            public void onChanged(@Nullable Shop shop) {
+                if (shop != null) {
                     binding.setIsLoading(false);
                     viewModel.setShop(shop);
                 }
@@ -67,12 +67,12 @@ public class ShopFragment extends Fragment implements Injectable {
         });
     }
 
-    /** Creates project fragment for specific project ID */
-    public static ProjectFragment forProject(String projectID) {
-        ProjectFragment fragment = new ProjectFragment();
+    /** Creates project fragment for specific shop ID */
+    public static ShopFragment forShop(String shopID) {
+        ShopFragment fragment = new ShopFragment();
         Bundle args = new Bundle();
 
-        args.putString(KEY_PROJECT_ID, projectID);
+        args.putString(KEY_SHOP_ID, shopID);
         fragment.setArguments(args);
 
         return fragment;
