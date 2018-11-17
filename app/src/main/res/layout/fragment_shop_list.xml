@@ -20,14 +20,14 @@
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/loading_projects"
             android:textAlignment="center"
-            /> <!-- app:visibleGone="@{isLoading}" -->
+            app:visibleGone="@{isLoading}"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/cardview_light_background"
             android:orientation="vertical"
-            >  <!-- app:visibleGone="@{!isLoading}" -->
+            app:visibleGone="@{!isLoading}">
 
             <TextView
                 android:layout_width="match_parent"

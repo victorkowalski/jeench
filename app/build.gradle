@@ -30,7 +30,7 @@ dependencies {
 
     implementation deps.support.material
     implementation deps.support.app_compat
-    implementation deps.support.constraint_layout
+    //implementation deps.support.constraint_layout
     implementation deps.support.cardview
     implementation deps.support.recyclerview
     implementation deps.support.legacy

@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 
 public interface ShopService {
 
-    String API_BASE_URL = "https://api.github.com/";
+    String API_BASE_URL = "https://api-dev.jeench.com/";
 
     @GET("v1/search-items")
     Call<Responce> getResponce();
