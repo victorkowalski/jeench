@@ -25,25 +25,23 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Singleton
 public class ShopRepository {
-    private ShopService ShopService;
+    private ShopService shopService;
 
     @Inject
-    public ShopRepository(ShopService ShopService) {
-        this.ShopService = ShopService;
+    public ShopRepository(ShopService shopService) {
+        this.shopService = shopService;
     }
 
     static String API_BASE_URL = "https://api-dev.jeench.com/";
 
     public LiveData<List<Shop>> getShopList() {
         final MutableLiveData<List<Shop>> data = new MutableLiveData<>();
-
+/*
         retrofit = getClient();
         ShopService shopService = retrofit.create(ShopService.class);
-
         Call<Responce> call = shopService.getResponce();
-
-        //ShopService.getResponce()
-        call.enqueue(new Callback<Responce>() {
+*/
+        shopService.getResponce().enqueue(new Callback<Responce>() {
             @Override
             public void onResponse(Call<Responce> call, Response<Responce> response) {
                 data.setValue(response.body().getMessage() /*List of Shops*/);
@@ -98,8 +96,10 @@ public class ShopRepository {
         return data;
     }
 
-    private static Retrofit retrofit = null;
     //test
+    /*
+    private static Retrofit retrofit = null;
+
     public static Retrofit getClient(){
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
@@ -120,7 +120,7 @@ public class ShopRepository {
 
         return retrofit;
     }
-
+*/
     public LiveData<Shop> getShopDetails(String shopName) {
         final MutableLiveData<Shop> data = new MutableLiveData<>();
 
