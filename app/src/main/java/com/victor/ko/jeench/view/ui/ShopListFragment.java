@@ -5,7 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.victor.ko.jeench.R;
 import com.victor.ko.jeench.di.Injectable;
+import com.victor.ko.jeench.service.model.Shop;
+import com.victor.ko.jeench.view.adapter.ShopAdapter;
+
+import com.victor.ko.jeench.databinding.FragmentShopListBinding;
+import com.victor.ko.jeench.view.callback.ShopClickCallback;
 /*
 import com.example.test.mvvmsampleapp.R;
 import com.example.test.mvvmsampleapp.databinding.FragmentProjectListBinding;
@@ -21,6 +27,7 @@ import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
 //import androidx.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.Observer;
@@ -28,9 +35,9 @@ import androidx.lifecycle.ViewModelProvider;
 //import androidx.lifecycle.ViewModelProviders;
 
 public class ShopListFragment extends Fragment implements Injectable {
-    public static final String TAG = "ProjectListFragment";
-    //private ProjectAdapter projectAdapter;
-    //private FragmentProjectListBinding binding;
+    public static final String TAG = "ShopListFragment";
+    private ShopAdapter shopAdapter;
+    private FragmentShopListBinding binding;
 
     @Inject
     ViewModelProvider.Factory viewModelFactory;
@@ -39,15 +46,15 @@ public class ShopListFragment extends Fragment implements Injectable {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        //binding = DataBindingUtil.inflate(inflater, R.layout.fragment_project_list, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shop_list, container, false);
 
-        //projectAdapter = new ProjectAdapter(projectClickCallback);
-        //binding.projectList.setAdapter(projectAdapter);
-        //binding.setIsLoading(true);
+        shopAdapter = new ShopAdapter(projectClickCallback);
+        binding.shopList.setAdapter(shopAdapter);
+        binding.setIsLoading(true);
 
-        //return (View) binding.getRoot();
-        return null;
+        return (View) binding.getRoot();
     }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -71,14 +78,14 @@ public class ShopListFragment extends Fragment implements Injectable {
             }
         });
     }*/
-/*
-    private final ProjectClickCallback projectClickCallback = new ProjectClickCallback() {
+
+    private final ShopClickCallback shopClickCallback = new ShopClickCallback() {
         @Override
-        public void onClick(Project project) {
+        public void onClick(Shop shop) {
             if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
-                ((MainActivity) getActivity()).show(project);
+                ((MainActivity) getActivity()).show(shop);
             }
         }
-    };*/
+    };
 }
 

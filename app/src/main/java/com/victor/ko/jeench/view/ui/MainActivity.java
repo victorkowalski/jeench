@@ -6,8 +6,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.victor.ko.jeench.R;
 import com.victor.ko.jeench.service.model.Item;
-import com.victor.ko.jeench.service.model.Message;
+//import com.victor.ko.jeench.service.model.Message;
 import com.victor.ko.jeench.service.model.Responce;
+import com.victor.ko.jeench.service.model.Shop;
 import com.victor.ko.jeench.service.repository.ShopAPI;
 
 import javax.inject.Inject;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity /*implements HasSupportFragm
 
     private static String API_BASE_URL = "https://api-dev.jeench.com/";
     private Item item;
-    private Message message;
+    //private Message message;
 
     @Inject
     DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
@@ -67,16 +68,16 @@ public class MainActivity extends AppCompatActivity /*implements HasSupportFragm
         getShops();
     }
 
-    /** Shows the project detail fragment *//*
-    public void show(Project project) {
-        ProjectFragment projectFragment = ProjectFragment.forProject(project.name);
+    /** Shows the shop detail fragment */
+    public void show(Shop shop) {
+        ShopFragment projectFragment = ShopFragment.forProject(shop.getShop_name());
 
         getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack("project")
                 .replace(R.id.fragment_container,
                         projectFragment, null).commit();
-    }*/
+    }
 /*
     @Override
     public DispatchingAndroidInjector<Fragment> supportFragmentInjector() {
@@ -100,9 +101,10 @@ public class MainActivity extends AppCompatActivity /*implements HasSupportFragm
         call.enqueue(new Callback<Responce>() {
             @Override
             public void onResponse(Call<Responce> call, Response<Responce> response) {
+                String code = response.body().getCode();
                 List<Item> message = response.body().getMessage();
 
-                System.out.println("address ::::::  ");
+                System.out.println("address ::::::  " + code);
                 System.out.println(message.get(3).getPoint_address());
                 //ArrayList<Item> items = new ArrayList<>();
                 //adapter = new PlanetAdapter(p,getApplicationContext());
@@ -133,7 +135,7 @@ public class MainActivity extends AppCompatActivity /*implements HasSupportFragm
         if(retrofit==null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(API_BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create(gson)/*GsonConverterFactory.create()*/)
+                    .addConverterFactory(GsonConverterFactory.create()/*GsonConverterFactory.create()*/)
                     .client(client)
                     .build();
         }

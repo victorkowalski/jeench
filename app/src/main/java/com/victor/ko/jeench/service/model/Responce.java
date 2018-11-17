@@ -13,7 +13,7 @@ public class Responce {
     private String code;
 
     //@Element(name = "message")
-    private List<Item> message;
+    private List<Shop> message;
 
     public String getCode() {
         return code;
@@ -23,11 +23,11 @@ public class Responce {
         this.code = code;
     }
 
-    public List<Item> getMessage() {
+    public List<Shop> getMessage() {
         return message;
     }
 
-    public void setMessage(List<Item> message) {
+    public void setMessage(List<Shop> message) {
         this.message = message;
     }
 }

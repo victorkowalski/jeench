@@ -4,7 +4,7 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 //@Root(name = "item", strict = false)
-public class Item {
+public class Shop {
     /*@Element(name = "point_id")*/ private String point_id;
     /*@Element(name = "shop_id")*/ private String shop_id;
     /*@Element(name = "point_address")*/ private String point_address;
