@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 
 public interface ShopAPI {
 
-    @GET("/search-items")
+    @GET("v1/search-items")
     Call<Responce> getShops();
 
 }

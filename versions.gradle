@@ -7,6 +7,7 @@ versions.dagger = "2.15"
 versions.junit = "4.12"
 versions.retrofit = "2.3.0"
 versions.simplexml = "2.3.0"
+versions.okhttplogger = "3.6.0"
 
 def deps = [:]
 
@@ -43,7 +44,8 @@ deps.dagger = dagger
 def retrofit = [:]
 retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
 retrofit.simplexml = "com.squareup.retrofit2:converter-simplexml:$versions.simplexml"
-//retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.okhttplogger = "com.squareup.okhttp3:logging-interceptor:$versions.okhttplogger"
 deps.retrofit = retrofit
 
 deps.junit = "junit:junit:$versions.junit"
