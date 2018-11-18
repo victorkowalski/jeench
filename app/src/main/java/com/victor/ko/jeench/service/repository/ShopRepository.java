@@ -36,11 +36,14 @@ public class ShopRepository {
 
     public LiveData<List<Shop>> getShopList() {
         final MutableLiveData<List<Shop>> data = new MutableLiveData<>();
-/*
+//------------------------temp----------------------------------------------------
+        /*
         retrofit = getClient();
         ShopService shopService = retrofit.create(ShopService.class);
         Call<Responce> call = shopService.getResponce();
-*/
+        call.enqueue(new Callback<Responce>() {
+            */
+//---------------------------------------------------------------------------
         shopService.getResponce().enqueue(new Callback<Responce>() {
             @Override
             public void onResponse(Call<Responce> call, Response<Responce> response) {
@@ -97,6 +100,7 @@ public class ShopRepository {
     }
 
     //test
+ //-----------------------------------temp---------------------------------------------
     /*
     private static Retrofit retrofit = null;
 
@@ -120,7 +124,8 @@ public class ShopRepository {
 
         return retrofit;
     }
-*/
+    */
+//---------------------------------------------------------------------------------
     public LiveData<Shop> getShopDetails(String shopName) {
         final MutableLiveData<Shop> data = new MutableLiveData<>();
 
