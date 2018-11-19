@@ -1,4 +1,5 @@
 <resources>
+    <string name="shop_list">Shop List</string>
     <string name="app_name">Jeench</string>
     <string name="loading_projects">Loading projects ...</string>
     <string name="projects_list">Project list</string>

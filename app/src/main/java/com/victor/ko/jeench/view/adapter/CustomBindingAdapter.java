@@ -12,7 +12,7 @@ public class CustomBindingAdapter {
     public static void showHide(View view, boolean show) {
         view.setVisibility(show ? View.VISIBLE : View.GONE);
     }
-
+/* moved to adapter
     @BindingAdapter("imageFromUrl")
     public static void bindImageFromUrl(ImageView view, String imageUrl) {
         if (!imageUrl.isEmpty()) {
@@ -21,7 +21,8 @@ public class CustomBindingAdapter {
                     //.transition(DrawableTransitionOptions.withCrossFade())
                     .into(view);
         }
-    }
+    }*/
+
 /*
     @BindingAdapter("bind:imageUrl")
     public static void loadImage(ImageView view, String url) {

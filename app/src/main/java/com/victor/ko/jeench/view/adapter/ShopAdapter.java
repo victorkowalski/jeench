@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.victor.ko.jeench.R;
 import com.victor.ko.jeench.databinding.ShopListItemBinding;
 import com.victor.ko.jeench.service.model.Shop;
@@ -74,8 +77,31 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
 
     @Override
     public void onBindViewHolder(ShopViewHolder holder, int position) {
-        holder.binding.setShop(shopList.get(position));
+        Shop shop = shopList.get(position);
+        holder.binding.setShop(shop);
+
+        ImageView itemImageView = holder.binding.itemImage;
+        String itemImageUrl = shop.getItem_image();
+        if (!itemImageUrl.isEmpty()) {
+            doGlide(itemImageView, itemImageUrl);
+        }
+
+        ImageView logoImageView = holder.binding.logoImage;
+        String logoImageUrl = shop.getShop_logo();
+        if (!logoImageUrl.isEmpty()) {
+            doGlide(logoImageView, logoImageUrl);
+        }
+
         holder.binding.executePendingBindings();
+    }
+
+    private void doGlide(ImageView view, String imageUrl){
+        if (!imageUrl.isEmpty()) {
+            Glide.with(view.getContext())
+                    .load(imageUrl)
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .into(view);
+        }
     }
 
     @Override

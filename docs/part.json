@@ -1,0 +1,53 @@
+{
+  "code": 0,
+  "message": [
+    {
+      "point_id": "7543",
+      "shop_id": "5171",
+      "point_address": "Sochi souvenir, улица Пригородная, Sochi, Russia",
+      "point_coords": "43.60585350,39.73906720",
+      "point_rank": "750.000",
+      "point_distance": "6245227",
+      "point_time_id": "0",
+      "shop_name": "test Jpm-2",
+      "shop_logo": "https://static-dev.jeench.com/img/shop-default.jpg?20180618",
+      "shop_rank": "850.000",
+      "currency_id": "643",
+      "item_is_liked": "0",
+      "item_id": "29518",
+      "item_name": "New product",
+      "item_image": "https://static-dev.jeench.com/img/items/3C/C1/3CC15F6BEECA38F057149AB2B4EA3F11_T_1532702512_480.JPG",
+      "item_price": "50.00",
+      "item_bonus_amount": "0",
+      "item_bonus_price": null,
+      "item_likes": "0",
+      "item_shares": "0",
+      "item_comments": "0",
+      "group_type": "1"
+    },
+    {
+      "point_id": "7543",
+      "shop_id": "5171",
+      "point_address": "Sochi souvenir, улица Пригородная, Sochi, Russia",
+      "point_coords": "43.60585350,39.73906720",
+      "point_rank": "750.000",
+      "point_distance": "6245227",
+      "point_time_id": "0",
+      "shop_name": "test Jpm-2",
+      "shop_logo": "https://static-dev.jeench.com/img/shop-default.jpg?20180618",
+      "shop_rank": "850.000",
+      "currency_id": "643",
+      "item_is_liked": "0",
+      "item_id": "29519",
+      "item_name": "New product",
+      "item_image": "https://static-dev.jeench.com/img/items/59/B0/59B039F5EB6FFC67AA87AA168960C67B_T_1531225008_480.JPG",
+      "item_price": "150.00",
+      "item_bonus_amount": "0",
+      "item_bonus_price": null,
+      "item_likes": "0",
+      "item_shares": "0",
+      "item_comments": "0",
+      "group_type": "1"
+    }
+  ]
+}
