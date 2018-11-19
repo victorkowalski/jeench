@@ -58,11 +58,15 @@ dependencies {
     //implementation   deps.lifecycle.compiler
     implementation   deps.lifecycle.runtime
     implementation   deps.lifecycle.extensions
-   /* implementation      deps.retrofit.simplexml {
-        exclude group: 'xpp3', module: 'xpp3'
-        //exclude group: 'stax', module: 'stax-api'
-        //exclude group: 'stax', module: 'stax'
-}*/
+
+    //glide
+    implementation deps.glide.runtime
+    annotationProcessor deps.glide.compiler
+    /* implementation      deps.retrofit.simplexml {
+         exclude group: 'xpp3', module: 'xpp3'
+         //exclude group: 'stax', module: 'stax-api'
+         //exclude group: 'stax', module: 'stax'
+ }*/
     //androidTestImplementation deps.mockito.core, { exclude group: 'net.bytebuddy' }
     /*compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile ('com.squareup.retrofit2:converter-simplexml:2.0.0-beta3'){

@@ -9,6 +9,7 @@ buildscript {
         // You need to add the following repository to download the
         // new plugin.
         google()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'

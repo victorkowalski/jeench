@@ -35,7 +35,7 @@
                 android:layout_marginTop="10dp"
                 android:contentDescription="TODO"
                 app:imageFromUrl="@{shop.item_image}"/>
-
+                    <!--app:imageFromUrl="@{shop.item_image}"-->
             <!--ImageView
             android:background="@color/colorAccent"
                 android:id="@+id/detail_image"

@@ -10,6 +10,7 @@ versions.retrofit = "2.0.2"
 //versions.simplexml = "2.3.0"
 versions.okhttplogger = "3.6.0"
 versions.arch = "2.0.0"
+versions.glide = '4.8.0'
 
 def deps = [:]
 
@@ -52,6 +53,11 @@ lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.arch"
 lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.arch"
 lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.arch"
 deps.lifecycle = lifecycle
+
+def glide = [:]
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
+deps.glide = glide
 
 deps.junit = "junit:junit:$versions.junit"
 
