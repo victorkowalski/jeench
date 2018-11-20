@@ -12,4 +12,8 @@ public interface ShopService {
     @GET("v1/search-items")
     Call<Responce> getResponce();
 
+    //simulate get shop details
+    @GET("v1/search-items")
+    Call<Responce> getShopDetails();
+
 }

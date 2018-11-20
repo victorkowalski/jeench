@@ -36,7 +36,7 @@ public class ShopRepository {
 
     public LiveData<List<Shop>> getShopList() {
         final MutableLiveData<List<Shop>> data = new MutableLiveData<>();
-//------------------------temp----------------------------------------------------
+//------------------------temp for debug responce----------------------------------------------------
         /*
         retrofit = getClient();
         ShopService shopService = retrofit.create(ShopService.class);
@@ -126,25 +126,36 @@ public class ShopRepository {
     }
     */
 //---------------------------------------------------------------------------------
-    public LiveData<Shop> getShopDetails(String shopName) {
+    public LiveData<Shop> getShopDetails(String shopId) {
         final MutableLiveData<Shop> data = new MutableLiveData<>();
 
-        /*
-        ShopService.getShopDetails(shopName).enqueue(new Callback<Project>() {
+        shopService.getShopDetails().enqueue(new Callback<Responce>() {
             @Override
-            public void onResponse(Call<Project> call, Response<Project> response) {
+            public void onResponse(Call<Responce> call, Response<Responce> response) {
                 simulateDelay();
-                data.setValue(response.body());
+                //find shop by id
+                Shop shop = getShopById(shopId, response.body());
+                data.setValue(shop);
             }
 
             @Override
-            public void onFailure(Call<Project> call, Throwable t) {
-                // TODO better error handling in part #2 ...
+            public void onFailure(Call<Responce> call, Throwable t) {
+                // TODO better error handling
                 data.setValue(null);
             }
-        });*/
+        });
 
         return data;
+    }
+
+    private Shop getShopById(String shopId, Responce responce){
+        List<Shop> shops = responce.getMessage();
+        for(Shop shop: shops){
+            if(shop.getShop_id()==shopId){
+                return shop;
+            }
+        }
+        return null;
     }
 
     private void simulateDelay() {
