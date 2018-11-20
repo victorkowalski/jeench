@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
 
     /** Shows the Shop detail fragment */
     public void show(Shop shop) {
-        ShopFragment shopFragment = ShopFragment.forShop(shop.getShop_name());
+        ShopFragment shopFragment = ShopFragment.forShop(shop.getShop_id());
 
         getSupportFragmentManager()
                 .beginTransaction()

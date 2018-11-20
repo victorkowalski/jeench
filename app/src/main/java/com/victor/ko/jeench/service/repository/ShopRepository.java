@@ -151,7 +151,7 @@ public class ShopRepository {
     private Shop getShopById(String shopId, Responce responce){
         List<Shop> shops = responce.getMessage();
         for(Shop shop: shops){
-            if(shop.getShop_id()==shopId){
+            if(shop.getShop_id().equals(shopId)){
                 return shop;
             }
         }

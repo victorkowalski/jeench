@@ -1,7 +1,7 @@
 <resources>
     <string name="shop_list">Shop List</string>
     <string name="app_name">Jeench</string>
-    <string name="loading_projects">Loading projects ...</string>
+    <string name="loading_projects">Loading shops ...</string>
     <string name="projects_list">Project list</string>
     <string name="project_name">Name of the project</string>
     <string name="google_github_projects">Google GitHub Projects</string>
@@ -16,7 +16,7 @@
     <string name="project_watchers">Project Watchers</string>
     <string name="project_description">Project Description</string>
     <string name="open_issues">Open Issues</string>
-    <string name="loading_project">Loading Project ...</string>
+    <string name="loading_shop">Loading Shop ...</string>
     <string name="line_1">line 1</string>
     <string name="line_2">line 2</string>
     <string name="line_3">line 3</string>

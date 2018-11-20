@@ -17,8 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical|center_horizontal"
-            android:text="@string/loading_project"
+            android:text="@string/loading_shop"
             android:textAlignment="center"
+            app:visibleGone="@{isLoading}"
             /> <!--app:visibleGone="@{isLoading}" -->
 
         <LinearLayout
@@ -33,10 +34,24 @@
             > <!--app:visibleGone="@{!isLoading}" -->
 
             <ImageView
+                android:id="@+id/shop_image"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="2dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="TODO"
+                android:gravity="start"
+                android:scaleType="fitXY"
+                />
+
+            <!--ImageView
                 android:id="@+id/imageView"
                 android:layout_width="@dimen/logo_width"
                 android:layout_height="@dimen/logo_height"
-                 />  <!--android:src="@drawable/github" -->
+                 /-->  <!--android:src="@drawable/github" -->
 
             <TextView
                 android:id="@+id/name"
@@ -45,7 +60,7 @@
                 android:contentDescription="@string/project_name"
                 android:textStyle="bold"
                 android:textSize="@dimen/project_header1"
-                android:text="shopViewModel.shop.name"
+                android:text="@{shopViewModel.shop.shop_name}"
                 android:textAlignment="center"
                 android:paddingBottom="5dp"/>
 
@@ -55,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/project_description"
                 android:textSize="@dimen/project_header2"
-                android:text="shopViewModel.shop.description"/>
+                android:text="@{shopViewModel.shop.point_address}"/>
 
 
             <TextView
@@ -64,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/project_language"
                 android:textSize="@dimen/project_text"
-                android:text="shopViewModel.shop.language"/>
+                android:text="@{shopViewModel.shop.currency_id}"/>
 
             <TextView
                 android:id="@+id/project_watchers"
@@ -72,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/project_watchers"
                 android:textSize="@dimen/project_text"
-                android:text="shopViewModel.shop.watchers"/>
+                android:text="@{shopViewModel.shop.item_price}"/>
 
             <TextView
                 android:id="@+id/project_open_issues"
@@ -80,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/open_issues"
                 android:textSize="@dimen/project_text"
-                android:text="shopViewModel.shop.open_issues"/>
+                android:text="@{shopViewModel.shop.item_comments}"/>
 
 
             <TextView
@@ -89,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="Created At"
                 android:textSize="@dimen/project_text"
-                android:text="shopViewModel.shop.created_at"/>
+                android:text="@{shopViewModel.shop.item_shares}"/>
 
             <TextView
                 android:id="@+id/project_updated_at"
@@ -97,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="Updated At"
                 android:textSize="@dimen/project_text"
-                android:text="shopViewModel.shop.updated_at"/>
+                android:text="@{shopViewModel.shop.item_likes}"/>
 
             <TextView
                 android:id="@+id/clone_url"
@@ -105,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/open_issues"
                 android:textSize="@dimen/project_text"
-                android:text="shopViewModel.shop.clone_url"/>
+                android:text="@{shopViewModel.shop.item_bonus_amount}"/>
 
         </LinearLayout>
 
