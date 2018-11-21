@@ -6,11 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.victor.ko.jeench.R;
 import com.victor.ko.jeench.databinding.FragmentShopDetailsBinding;
 import com.victor.ko.jeench.di.Injectable;
+import com.victor.ko.jeench.common.ImageService;
 import com.victor.ko.jeench.service.model.Shop;
 import com.victor.ko.jeench.viewmodel.ShopViewModel;
 
@@ -27,6 +26,9 @@ import androidx.lifecycle.ViewModelProviders;
 public class ShopFragment extends Fragment implements Injectable {
     private static final String KEY_SHOP_ID = "shop_id";
     private FragmentShopDetailsBinding binding;
+
+    @Inject
+    ImageService imageService;
 
     @Inject
     ViewModelProvider.Factory viewModelFactory;
@@ -66,10 +68,11 @@ public class ShopFragment extends Fragment implements Injectable {
                     binding.setIsLoading(false);
 
                     ImageView view = binding.shopImage;
-                    Glide.with(view.getContext())
+                    imageService.loadImage(shop.getItem_image(), view);
+                    /*Glide.with(view.getContext())
                             .load(shop.getItem_image())
                             .transition(DrawableTransitionOptions.withCrossFade())
-                            .into(view);
+                            .into(view);*/
 
                     viewModel.setShop(shop);
                 }

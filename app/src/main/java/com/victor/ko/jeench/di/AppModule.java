@@ -1,5 +1,6 @@
 package com.victor.ko.jeench.di;
 
+import com.victor.ko.jeench.common.ImageService;
 import com.victor.ko.jeench.service.repository.ShopService;
 import com.victor.ko.jeench.viewmodel.ShopViewModelFactory;
 
@@ -28,5 +29,11 @@ class AppModule {
             ViewModelSubComponent.Builder viewModelSubComponent) {
 
         return new ShopViewModelFactory(viewModelSubComponent.build());
+    }
+
+    @Singleton
+    @Provides
+    ImageService imageService() {
+        return new ImageService();
     }
 }

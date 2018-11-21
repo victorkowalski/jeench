@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.victor.ko.jeench.R;
+import com.victor.ko.jeench.common.ImageService;
 import com.victor.ko.jeench.databinding.ShopListItemBinding;
 import com.victor.ko.jeench.service.model.Shop;
 import com.victor.ko.jeench.view.callback.ShopClickCallback;
@@ -18,15 +19,21 @@ import com.victor.ko.jeench.view.callback.ShopClickCallback;
 import java.util.List;
 import java.util.Objects;
 
+import javax.inject.Inject;
+
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder> {
+
+    ImageService imageService;
 
     List<? extends Shop> shopList;
 
     @Nullable
     private final ShopClickCallback shopClickCallback;
 
-    public ShopAdapter(@Nullable ShopClickCallback shopClickCallback) {
+    public ShopAdapter(@Nullable ShopClickCallback shopClickCallback,
+                       ImageService imageService) {
         this.shopClickCallback = shopClickCallback;
+        this.imageService = imageService;
     }
 
     public void setShopList(final List<? extends Shop> shopList) {
@@ -83,13 +90,16 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         ImageView itemImageView = holder.binding.itemImage;
         String itemImageUrl = shop.getItem_image();
         if (!itemImageUrl.isEmpty()) {
-            doGlide(itemImageView, itemImageUrl);
+            //doGlide(itemImageView, itemImageUrl);
+            imageService.loadImage(itemImageUrl, itemImageView);
         }
 
         ImageView logoImageView = holder.binding.logoImage;
         String logoImageUrl = shop.getShop_logo();
         if (!logoImageUrl.isEmpty()) {
-            doGlide(logoImageView, logoImageUrl);
+            imageService.loadImage(logoImageUrl, logoImageView);
+            //doGlide(logoImageView, logoImageUrl);
+            //loadImage()
         }
 
         holder.binding.executePendingBindings();

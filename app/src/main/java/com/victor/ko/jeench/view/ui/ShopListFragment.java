@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.victor.ko.jeench.R;
+import com.victor.ko.jeench.common.ImageService;
 import com.victor.ko.jeench.di.Injectable;
 import com.victor.ko.jeench.service.model.Shop;
 import com.victor.ko.jeench.view.adapter.ShopAdapter;
@@ -44,13 +45,16 @@ public class ShopListFragment extends Fragment implements Injectable {
     @Inject
     ViewModelProvider.Factory viewModelFactory;
 
+    @Inject
+    ImageService imageService;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shop_list, container, false);
 
-        shopAdapter = new ShopAdapter(shopClickCallback);
+        shopAdapter = new ShopAdapter(shopClickCallback, imageService);
         binding.shopList.setAdapter(shopAdapter);
         binding.setIsLoading(true);
 
