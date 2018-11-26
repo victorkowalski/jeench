@@ -59,6 +59,11 @@ dependencies {
     implementation   deps.lifecycle.runtime
     implementation   deps.lifecycle.extensions
 
+    //rxjava
+    implementation  deps.rx.java
+    implementation  deps.rx.android
+    implementation  deps.rx.retrofitrx
+
     //glide
     implementation deps.glide.runtime
     annotationProcessor deps.glide.compiler

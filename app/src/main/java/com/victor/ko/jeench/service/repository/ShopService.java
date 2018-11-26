@@ -2,8 +2,12 @@ package com.victor.ko.jeench.service.repository;
 
 import com.victor.ko.jeench.service.model.Responce;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
+import io.reactivex.Observable;
 
 public interface ShopService {
 

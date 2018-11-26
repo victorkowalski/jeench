@@ -1,7 +1,9 @@
 package com.victor.ko.jeench.di;
 
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.victor.ko.jeench.common.ImageService;
 import com.victor.ko.jeench.service.repository.ShopService;
+import com.victor.ko.jeench.service.repository.ShopServiceRx;
 import com.victor.ko.jeench.viewmodel.ShopViewModelFactory;
 
 import javax.inject.Singleton;
@@ -21,6 +23,16 @@ class AppModule {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(ShopService.class);
+    }
+
+    @Singleton @Provides
+    ShopServiceRx provideShopServiceRx() {
+        return new Retrofit.Builder()
+                .baseUrl(ShopServiceRx.API_BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build()
+                .create(ShopServiceRx.class);
     }
 
     @Singleton

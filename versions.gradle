@@ -10,7 +10,11 @@ versions.retrofit = "2.0.2"
 //versions.simplexml = "2.3.0"
 versions.okhttplogger = "3.6.0"
 versions.arch = "2.0.0"
-versions.glide = '4.8.0'
+versions.glide = "4.8.0"
+//rx
+versions.rxjava = "2.0.2"
+versions.rxandroid = "2.0.1"
+versions.retrofitrx = "1.0.0"
 
 def deps = [:]
 
@@ -54,10 +58,18 @@ lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.arch"
 lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.arch"
 deps.lifecycle = lifecycle
 
+//Glide
 def glide = [:]
 glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
 glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
 deps.glide = glide
+
+/* reactive */
+def rx = [:]
+rx.java = "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+rx.android = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+rx.retrofitrx = "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofitrx"
+deps.rx = rx
 
 deps.junit = "junit:junit:$versions.junit"
 
