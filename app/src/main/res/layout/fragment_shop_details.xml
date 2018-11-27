@@ -13,14 +13,13 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/loading_project"
+            android:id="@+id/loading_shop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/loading_shop"
             android:textAlignment="center"
-            app:visibleGone="@{isLoading}"
-            /> <!--app:visibleGone="@{isLoading}" -->
+            app:visibleGone="@{isLoading}"/>
 
         <LinearLayout
             android:layout_marginStart="@dimen/item_horizontal_margin"
@@ -30,8 +29,7 @@
             android:gravity="center_vertical|center_horizontal"
             android:padding="5dp"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:orientation="vertical"
-            > <!--app:visibleGone="@{!isLoading}" -->
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/shop_image"
@@ -47,79 +45,73 @@
                 android:scaleType="fitXY"
                 />
 
-            <!--ImageView
-                android:id="@+id/imageView"
-                android:layout_width="@dimen/logo_width"
-                android:layout_height="@dimen/logo_height"
-                 /-->  <!--android:src="@drawable/github" -->
-
             <TextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/project_name"
+                android:contentDescription="@string/shop_name"
                 android:textStyle="bold"
-                android:textSize="@dimen/project_header1"
+                android:textSize="@dimen/shop_header1"
                 android:text="@{shopViewModel.shop.shop_name}"
                 android:textAlignment="center"
                 android:paddingBottom="5dp"/>
 
             <TextView
-                android:id="@+id/project_desc"
+                android:id="@+id/shop_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/project_description"
-                android:textSize="@dimen/project_header2"
+                android:contentDescription="@string/shop_description"
+                android:textSize="@dimen/shop_header2"
                 android:text="@{shopViewModel.shop.point_address}"/>
 
 
             <TextView
-                android:id="@+id/languages"
+                android:id="@+id/currency"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/project_language"
-                android:textSize="@dimen/project_text"
+                android:contentDescription="@string/shop_currency"
+                android:textSize="@dimen/shop_text"
                 android:text="@{shopViewModel.shop.currency_id}"/>
 
             <TextView
-                android:id="@+id/project_watchers"
+                android:id="@+id/item_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/project_watchers"
-                android:textSize="@dimen/project_text"
+                android:contentDescription="@string/item_price"
+                android:textSize="@dimen/shop_text"
                 android:text="@{shopViewModel.shop.item_price}"/>
 
             <TextView
-                android:id="@+id/project_open_issues"
+                android:id="@+id/item_comments"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/open_issues"
-                android:textSize="@dimen/project_text"
+                android:contentDescription="@string/item_comments"
+                android:textSize="@dimen/shop_text"
                 android:text="@{shopViewModel.shop.item_comments}"/>
 
 
             <TextView
-                android:id="@+id/project_created_at"
+                android:id="@+id/item_shares"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="Created At"
-                android:textSize="@dimen/project_text"
+                android:contentDescription="item_shares"
+                android:textSize="@dimen/shop_text"
                 android:text="@{shopViewModel.shop.item_shares}"/>
 
             <TextView
-                android:id="@+id/project_updated_at"
+                android:id="@+id/item_likes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="Updated At"
-                android:textSize="@dimen/project_text"
+                android:contentDescription="item_likes"
+                android:textSize="@dimen/shop_text"
                 android:text="@{shopViewModel.shop.item_likes}"/>
 
             <TextView
-                android:id="@+id/clone_url"
+                android:id="@+id/item_bonus_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/open_issues"
-                android:textSize="@dimen/project_text"
+                android:contentDescription="@string/item_bonus_amount"
+                android:textSize="@dimen/shop_text"
                 android:text="@{shopViewModel.shop.item_bonus_amount}"/>
 
         </LinearLayout>

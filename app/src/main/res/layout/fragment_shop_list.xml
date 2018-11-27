@@ -14,11 +14,11 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/loading_projects"
+            android:id="@+id/loading_shops"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical|center_horizontal"
-            android:text="@string/loading_projects"
+            android:text="@string/loading_shops"
             android:textAlignment="center"
             app:visibleGone="@{isLoading}"/>
 
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textSize="@dimen/project_header1"
+                android:textSize="@dimen/shop_header1"
                 android:text="@string/shop_list"
                 android:textStyle="bold"
                 android:layout_marginTop="20dp"
