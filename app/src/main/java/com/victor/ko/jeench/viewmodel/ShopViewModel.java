@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.victor.ko.jeench.service.model.Shop;
 import com.victor.ko.jeench.service.repository.ShopRepository;
+import com.victor.ko.jeench.service.repository.ShopRepositoryRx;
 
 import javax.inject.Inject;
 
@@ -29,6 +30,24 @@ public class ShopViewModel extends AndroidViewModel {
     public ObservableField<Shop> shop = new ObservableField<>();
 
     @Inject
+    public ShopViewModel(@NonNull ShopRepositoryRx shopRepositoryRx, @NonNull Application application) {
+        super(application);
+
+        this.shopID = new MutableLiveData<>();
+// get shop details using rx
+        shopObservable = Transformations.switchMap(shopID, input -> {
+            if (input.isEmpty()) {
+                Log.i(TAG, "ShopViewModel shoptID is absent!!!");
+                return ABSENT;
+            }
+
+            Log.i(TAG,"ShopViewModel shopID is " + shopID.getValue());
+
+            return shopRepositoryRx.getShopDetails(shopID.getValue());
+        });
+    }
+/*
+    @Inject
     public ShopViewModel(@NonNull ShopRepository shopRepository, @NonNull Application application) {
         super(application);
 
@@ -42,14 +61,10 @@ public class ShopViewModel extends AndroidViewModel {
 
             Log.i(TAG,"ShopViewModel shopID is " + shopID.getValue());
 
-            //test
-            //ShopViewModel shopViewModel = new ShopViewModel();
-
             return shopRepository.getShopDetails(shopID.getValue());
-            //return null;//shopRepository.getShopList().getValue().get(5);
         });
     }
-
+*/
     public LiveData<Shop> getObservableShop() {
         return shopObservable;
     }

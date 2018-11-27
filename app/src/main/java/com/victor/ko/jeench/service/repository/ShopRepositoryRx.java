@@ -1,5 +1,7 @@
 package com.victor.ko.jeench.service.repository;
 
+import android.util.Log;
+
 import com.victor.ko.jeench.service.model.Responce;
 import com.victor.ko.jeench.service.model.Shop;
 
@@ -10,6 +12,9 @@ import javax.inject.Singleton;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,6 +25,7 @@ import retrofit2.Response;
 @Singleton
 public class ShopRepositoryRx {
     private ShopServiceRx shopServiceRx;
+    private Disposable shopDetailsisposable;
 
     @Inject
     public ShopRepositoryRx(ShopServiceRx shopServiceRx) {
@@ -31,6 +37,15 @@ public class ShopRepositoryRx {
     public LiveData<Shop> getShopDetails(String shopId) {
         final MutableLiveData<Shop> data = new MutableLiveData<>();
 
+        shopDetailsisposable = shopServiceRx.getShopDetails()
+                .subscribeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(response -> {
+                    Log.d("shop details", "all shops");
+                    Shop shop = getShopById(shopId, response.getMessage());
+                    data.setValue(shop);
+                    //view.showSearchResult(response.getMessage());
+                }, throwable -> Log.e("error", throwable.getMessage()));
         //compositeDisposable
         /*
         shopServiceRx.getShopDetails().enqueue(new Callback<Responce>() {
@@ -51,6 +66,24 @@ public class ShopRepositoryRx {
 
         return data;
     }
+
+    /*
+    searchDisposable = twitterApi.searchTweets(searchString)
+                .delay(600, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(searchResponse -> {
+                    Log.d("search", searchString);
+                    view.showSearchResult(searchResponse.items());
+                }, throwable -> view.error(throwable));
+
+    compositeDisposable.add(twitterApi.getTrends(locationId)
+                .subscribeOn(Schedulers.computation())
+                .map(trendsResponses -> trendsResponses.get(0))
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(trendsResponse -> view.load(trendsResponse.trends()),
+                        throwable -> view.error(throwable)));
+     */
 //---------------------------------------------------------------------------------
 /*
     public LiveData<Shop> getShopDetails(String shopId) {
@@ -75,8 +108,8 @@ public class ShopRepositoryRx {
         return data;
     }
 */
-    private Shop getShopById(String shopId, Responce responce){
-        List<Shop> shops = responce.getMessage();
+    private Shop getShopById(String shopId, List<Shop> shops){
+        //List<Shop> shops = responce.getMessage();
         for(Shop shop: shops){
             if(shop.getShop_id().equals(shopId)){
                 return shop;
