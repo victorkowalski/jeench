@@ -86,7 +86,7 @@ dependencies {
     // Testing
     testImplementation deps.test.junit
     androidTestImplementation (deps.test.espressocore, {
-        exclude group: 'com.android.support', module: 'support-annotations'
+        //exclude group: 'com.android.support', module: 'support-annotations'
     })
     testImplementation deps.test.mockitocore
     testImplementation deps.test.powermockjunit
