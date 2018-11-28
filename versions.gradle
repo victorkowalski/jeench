@@ -5,7 +5,6 @@ versions.support = "1.0.0"
 versions.constraintlayout = "2.0.0-alpha2"
 //versions.constraintlayout = "1.0.2"
 versions.dagger = "2.15"
-versions.junit = "4.12"
 versions.retrofit = "2.0.2"
 //versions.simplexml = "2.3.0"
 versions.okhttplogger = "3.6.0"
@@ -15,6 +14,12 @@ versions.glide = "4.8.0"
 versions.rxjava = "2.0.2"
 versions.rxandroid = "2.0.1"
 versions.retrofitrx = "1.0.0"
+//test
+versions.espresso = "2.2.2"
+versions.junit = "4.12"
+versions.mockitocore = "1.10.19"
+versions.powermock = "1.6.5"
+versions.espressocontrib = "2.2"
 
 def deps = [:]
 
@@ -71,7 +76,34 @@ rx.android = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
 rx.retrofitrx = "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofitrx"
 deps.rx = rx
 
-deps.junit = "junit:junit:$versions.junit"
+/* Test */
+def test = [:]
+test.junit = "junit:junit:$versions.junit"
+test.espressocore = "com.android.support.test.espresso:espresso-core:$versions.espresso"
+test.mockitocore = "org.mockito:mockito-core:$versions.mockitocore"
+test.powermockjunit  = "org.powermock:powermock-module-junit4:$versions.powermock"
+test.powermockrule = "org.powermock:powermock-module-junit4-rule:$versions.powermock"
+test.powermockmockito = "org.powermock:powermock-api-mockito:$versions.powermock"
+test.espressocontrib = "com.android.support.test.espresso:espresso-contrib:$versions.espressocontrib"
+deps.test = test
+/*
+testCompile 'junit:junit:4.12'
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+})
+testCompile 'org.mockito:mockito-core:1.10.19'
+testCompile "org.powermock:powermock-module-junit4:1.6.5"
+testCompile "org.powermock:powermock-module-junit4-rule:1.6.5"
+testCompile "org.powermock:powermock-api-mockito:1.6.5"
+
+androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2') {
+    exclude group: 'com.android.support', module: 'appcompat'
+    exclude group: 'com.android.support', module: 'support-v4'
+    exclude module: 'recyclerview-v7'
+    exclude module: 'support-annotations'
+}
+*/
+
 
 ext.deps = deps
 // Dagger
