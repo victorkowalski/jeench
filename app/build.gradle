@@ -85,8 +85,18 @@ dependencies {
 
     // Testing
     testImplementation deps.test.junit
+    //testImplementation 'junit:junit:4.12'
+    androidTestImplementation deps.test.junitrunner//'com.android.support.test:runner:1.0.1'
+    // Espresso dependencies
+    androidTestImplementation deps.test.espressocore
+    androidTestImplementation deps.test.espressocontrib
+    androidTestImplementation deps.test.espressointents
+}
+
+/*
+    testImplementation deps.test.junit
     androidTestImplementation (deps.test.espressocore, {
-        //exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-annotations'
     })
     testImplementation deps.test.mockitocore
     testImplementation deps.test.powermockjunit
@@ -99,7 +109,7 @@ dependencies {
         exclude module: 'recyclerview-v7'
         exclude module: 'support-annotations'
     }
-
+*/
     /*
 testCompile 'junit:junit:4.12'
 androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -117,4 +127,4 @@ androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2') {
     exclude module: 'support-annotations'
 }
 */
-}
+

@@ -15,7 +15,8 @@ versions.rxjava = "2.0.2"
 versions.rxandroid = "2.0.1"
 versions.retrofitrx = "1.0.0"
 //test
-versions.espresso = "2.2.2"
+versions.junitrunner = "1.0.1"
+versions.espresso = "3.0.1"
 versions.junit = "4.12"
 versions.mockitocore = "1.10.19"
 versions.powermock = "1.6.5"
@@ -79,12 +80,19 @@ deps.rx = rx
 /* Test */
 def test = [:]
 test.junit = "junit:junit:$versions.junit"
+test.junitrunner = "com.android.support.test:runner:$versions.junitrunner"
+
 test.espressocore = "com.android.support.test.espresso:espresso-core:$versions.espresso"
+test.espressocontrib = "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
+test.espressointents = "com.android.support.test.espresso:espresso-intents:$versions.espresso"
+/*
+
 test.mockitocore = "org.mockito:mockito-core:$versions.mockitocore"
 test.powermockjunit  = "org.powermock:powermock-module-junit4:$versions.powermock"
 test.powermockrule = "org.powermock:powermock-module-junit4-rule:$versions.powermock"
 test.powermockmockito = "org.powermock:powermock-api-mockito:$versions.powermock"
-test.espressocontrib = "com.android.support.test.espresso:espresso-contrib:$versions.espressocontrib"
+
+*/
 deps.test = test
 /*
 testCompile 'junit:junit:4.12'
