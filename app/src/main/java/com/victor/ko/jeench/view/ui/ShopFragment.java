@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.victor.ko.jeench.R;
+import com.victor.ko.jeench.common.ImageService;
 import com.victor.ko.jeench.databinding.FragmentShopDetailsBinding;
 import com.victor.ko.jeench.di.Injectable;
-import com.victor.ko.jeench.common.ImageService;
 import com.victor.ko.jeench.service.model.Shop;
 import com.victor.ko.jeench.viewmodel.ShopViewModel;
 
@@ -21,7 +21,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
-
 
 public class ShopFragment extends Fragment implements Injectable {
     private static final String KEY_SHOP_ID = "shop_id";
@@ -69,10 +68,6 @@ public class ShopFragment extends Fragment implements Injectable {
 
                     ImageView view = binding.shopImage;
                     imageService.loadImage(shop.getItem_image(), view);
-                    /*Glide.with(view.getContext())
-                            .load(shop.getItem_image())
-                            .transition(DrawableTransitionOptions.withCrossFade())
-                            .into(view);*/
 
                     viewModel.setShop(shop);
                 }

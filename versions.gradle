@@ -81,6 +81,7 @@ deps.rx = rx
 def test = [:]
 test.junit = "junit:junit:$versions.junit"
 test.junitrunner = "com.android.support.test:runner:$versions.junitrunner"
+test.junitrules = "com.android.support.test:rules:$versions.junitrunner"
 
 test.espressocore = "com.android.support.test.espresso:espresso-core:$versions.espresso"
 test.espressocontrib = "com.android.support.test.espresso:espresso-contrib:$versions.espresso"

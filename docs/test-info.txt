@@ -1,0 +1,97 @@
+Testing started at 19:17 ...
+
+12/01 19:17:10: Launching coolTextDisplayed()
+No apk changes detected since last installation, skipping installation of /home/victor/Workspace/AndroidStudioProjects/java/jeench/app/build/outputs/apk/debug/app-debug.apk
+$ adb push /home/victor/Workspace/AndroidStudioProjects/java/jeench/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk /data/local/tmp/com.victor.ko.jeench.test
+$ adb shell pm install -t -r "/data/local/tmp/com.victor.ko.jeench.test"
+	pkg: /data/local/tmp/com.victor.ko.jeench.test
+Success
+APK installed in 879 ms
+Running tests
+
+$ adb shell am instrument -w -r   -e debug false -e class 'com.victor.ko.jeench.ExampleInstrumentedTest#coolTextDisplayed' com.victor.ko.jeench.test/androidx.test.runner.AndroidJUnitRunner
+Client not ready yet..
+Started running tests
+
+androidx.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with text: is "hello"
+
+View Hierarchy:
++>DecorView{id=-1, visibility=VISIBLE, width=768, height=1280, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030466 surfaceInsets=Rect(0, 0 - 0, 0) needsMenuKey=2}, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}
+|
++->LinearLayout{id=-1, visibility=VISIBLE, width=768, height=1184, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@3a805b0d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2}
+|
++-->ViewStub{id=16909171, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@3d72eac2, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0}
+|
++-->FrameLayout{id=-1, visibility=VISIBLE, width=768, height=1134, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@3bfb1410, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=50.0, child-count=1}
+|
++--->ActionBarOverlayLayout{id=2131230773, res-name=decor_content_parent, visibility=VISIBLE, width=768, height=1134, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@3e15172f, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2}
+|
++---->ContentFrameLayout{id=16908290, res-name=content, visibility=VISIBLE, width=768, height=1022, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=androidx.appcompat.widget.ActionBarOverlayLayout$LayoutParams@432dec5, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=112.0, child-count=1}
+|
++----->FrameLayout{id=2131230795, res-name=fragment_container, visibility=VISIBLE, width=768, height=1022, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@2965f74b, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=1}
+|
++------>LinearLayout{id=-1, visibility=VISIBLE, width=768, height=1022, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@d5613e6, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2}
+|
++------->AppCompatTextView{id=2131230822, res-name=loading_shops, visibility=VISIBLE, width=768, height=1022, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@319abd27, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=Loading shops ..., input-type=0, ime-target=false, has-links=false}
+|
++------->LinearLayout{id=-1, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@385f8872, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2}
+|
++-------->AppCompatTextView{id=2131230880, res-name=shop_list_title, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@166c04c3, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=Shop list, input-type=0, ime-target=false, has-links=false}
+|
++-------->RecyclerView{id=2131230879, res-name=shop_list, desc=Shop list, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@2743a140, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=0}
+|
++---->ActionBarContainer{id=2131230729, res-name=action_bar_container, visibility=VISIBLE, width=768, height=112, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=androidx.appcompat.widget.ActionBarOverlayLayout$LayoutParams@10802a1f, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2}
+|
++----->Toolbar{id=2131230727, res-name=action_bar, visibility=VISIBLE, width=768, height=112, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@1b3b3ca, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2}
+|
++------>AppCompatTextView{id=-1, visibility=VISIBLE, width=129, height=54, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=androidx.appcompat.widget.Toolbar$LayoutParams@1287493b, tag=null, root-is-layout-requested=false, has-input-connection=false, x=32.0, y=29.0, text=Jeench, input-type=0, ime-target=false, has-links=false}
+|
++------>ActionMenuView{id=-1, visibility=VISIBLE, width=0, height=112, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=androidx.appcompat.widget.Toolbar$LayoutParams@3a8c5858, tag=null, root-is-layout-requested=false, has-input-connection=false, x=768.0, y=0.0, child-count=0}
+|
++----->ActionBarContextView{id=2131230735, res-name=action_context_bar, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@1cbc9db1, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=0}
+|
++->View{id=16908335, res-name=statusBarBackground, visibility=VISIBLE, width=768, height=50, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@1c414296, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0}
+|
++->View{id=16908336, res-name=navigationBarBackground, visibility=VISIBLE, width=768, height=96, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@173e17, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=1184.0}
+|
+at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+at java.lang.Thread.getStackTrace(Thread.java:580)
+at androidx.test.espresso.base.DefaultFailureHandler.getUserFriendlyError(DefaultFailureHandler.java:94)
+at androidx.test.espresso.base.DefaultFailureHandler.handle(DefaultFailureHandler.java:57)
+at androidx.test.espresso.ViewInteraction.waitForAndHandleInteractionResults(ViewInteraction.java:311)
+at androidx.test.espresso.ViewInteraction.check(ViewInteraction.java:296)
+at com.victor.ko.jeench.ExampleInstrumentedTest.coolTextDisplayed(ExampleInstrumentedTest.java:48)
+at java.lang.reflect.Method.invoke(Native Method)
+at java.lang.reflect.Method.invoke(Method.java:372)
+at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+at androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:80)
+at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:104)
+at org.junit.runners.Suite.runChild(Suite.java:128)
+at org.junit.runners.Suite.runChild(Suite.java:27)
+at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:56)
+at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:388)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1853)
+
+Tests ran to completion.
+
+

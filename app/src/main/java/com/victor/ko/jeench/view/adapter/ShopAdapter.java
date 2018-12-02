@@ -1,9 +1,5 @@
 package com.victor.ko.jeench.view.adapter;
 
-import androidx.databinding.DataBindingUtil;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.DiffUtil;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -17,9 +13,11 @@ import com.victor.ko.jeench.service.model.Shop;
 import com.victor.ko.jeench.view.callback.ShopClickCallback;
 
 import java.util.List;
-import java.util.Objects;
 
-import javax.inject.Inject;
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder> {
 
@@ -63,7 +61,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
                     Shop shop = shopList.get(newItemPosition);
                     Shop old = shopList.get(oldItemPosition);
                     return shop.getShop_id() == old.getShop_id();
-                            //&& Objects.equals(shop.git_url, shop.git_url);
                 }
             });
             this.shopList = shopList;
@@ -90,7 +87,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         ImageView itemImageView = holder.binding.itemImage;
         String itemImageUrl = shop.getItem_image();
         if (!itemImageUrl.isEmpty()) {
-            //doGlide(itemImageView, itemImageUrl);
             imageService.loadImage(itemImageUrl, itemImageView);
         }
 
@@ -98,20 +94,9 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         String logoImageUrl = shop.getShop_logo();
         if (!logoImageUrl.isEmpty()) {
             imageService.loadImage(logoImageUrl, logoImageView);
-            //doGlide(logoImageView, logoImageUrl);
-            //loadImage()
         }
 
         holder.binding.executePendingBindings();
-    }
-
-    private void doGlide(ImageView view, String imageUrl){
-        if (!imageUrl.isEmpty()) {
-            Glide.with(view.getContext())
-                    .load(imageUrl)
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .into(view);
-        }
     }
 
     @Override

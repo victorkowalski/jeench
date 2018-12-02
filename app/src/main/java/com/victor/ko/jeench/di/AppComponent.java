@@ -1,7 +1,9 @@
 package com.victor.ko.jeench.di;
 
-import com.victor.ko.jeench.JeenchApplication;
 import android.app.Application;
+
+import com.victor.ko.jeench.JeenchApplication;
+
 import javax.inject.Singleton;
 
 import dagger.BindsInstance;

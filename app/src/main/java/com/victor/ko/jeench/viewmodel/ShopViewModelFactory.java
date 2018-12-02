@@ -1,18 +1,16 @@
 package com.victor.ko.jeench.viewmodel;
 
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.collection.ArrayMap;
-
 import com.victor.ko.jeench.di.ViewModelSubComponent;
-import com.victor.ko.jeench.viewmodel.ShopListViewModel;
-import com.victor.ko.jeench.viewmodel.ShopViewModel;
 
 import java.util.Map;
 import java.util.concurrent.Callable;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+
+import androidx.collection.ArrayMap;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 @Singleton
 public class ShopViewModelFactory implements ViewModelProvider.Factory {
@@ -21,8 +19,6 @@ public class ShopViewModelFactory implements ViewModelProvider.Factory {
     @Inject
     public ShopViewModelFactory(ViewModelSubComponent viewModelSubComponent) {
         creators = new ArrayMap<>();
-
-        // View models cannot be injected directly because they won't be bound to the owner's view model scope.
         creators.put(ShopViewModel.class, () -> viewModelSubComponent.shopViewModel());
         creators.put(ShopListViewModel.class, () -> viewModelSubComponent.shopListViewModel());
     }

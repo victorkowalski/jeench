@@ -4,7 +4,6 @@ import android.app.Application;
 import android.util.Log;
 
 import com.victor.ko.jeench.service.model.Shop;
-import com.victor.ko.jeench.service.repository.ShopRepository;
 import com.victor.ko.jeench.service.repository.ShopRepositoryRx;
 
 import javax.inject.Inject;
@@ -20,7 +19,6 @@ public class ShopViewModel extends AndroidViewModel {
     private static final String TAG = ShopViewModel.class.getName();
     private static final MutableLiveData ABSENT = new MutableLiveData();
     {
-        //noinspection unchecked
         ABSENT.setValue(null);
     }
 
@@ -46,7 +44,7 @@ public class ShopViewModel extends AndroidViewModel {
             return shopRepositoryRx.getShopDetails(shopID.getValue());
         });
     }
-/*
+/*   get shop details
     @Inject
     public ShopViewModel(@NonNull ShopRepository shopRepository, @NonNull Application application) {
         super(application);

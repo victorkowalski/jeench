@@ -3,7 +3,6 @@ package com.victor.ko.jeench.service.repository;
 import com.victor.ko.jeench.service.model.Responce;
 
 import io.reactivex.Observable;
-import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface ShopServiceRx {

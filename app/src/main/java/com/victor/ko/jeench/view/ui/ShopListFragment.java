@@ -7,35 +7,24 @@ import android.view.ViewGroup;
 
 import com.victor.ko.jeench.R;
 import com.victor.ko.jeench.common.ImageService;
+import com.victor.ko.jeench.databinding.FragmentShopListBinding;
 import com.victor.ko.jeench.di.Injectable;
 import com.victor.ko.jeench.service.model.Shop;
 import com.victor.ko.jeench.view.adapter.ShopAdapter;
-
-import com.victor.ko.jeench.databinding.FragmentShopListBinding;
 import com.victor.ko.jeench.view.callback.ShopClickCallback;
 import com.victor.ko.jeench.viewmodel.ShopListViewModel;
-/*
-import com.example.test.mvvmsampleapp.R;
-import com.example.test.mvvmsampleapp.databinding.FragmentProjectListBinding;
 
-import com.example.test.mvvmsampleapp.service.model.Project;
-import com.example.test.mvvmsampleapp.view.adapter.ProjectAdapter;
-import com.example.test.mvvmsampleapp.view.callback.ProjectClickCallback;
-import com.example.test.mvvmsampleapp.viewmodel.ProjectListViewModel;
-*/
 import java.util.List;
 
 import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
-//import androidx.databinding.DataBindingUtil;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
-//import androidx.lifecycle.ViewModelProviders;
 
 public class ShopListFragment extends Fragment implements Injectable {
     public static final String TAG = "ShopListFragment";
